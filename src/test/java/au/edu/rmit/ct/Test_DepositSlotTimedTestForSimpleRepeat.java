@@ -30,7 +30,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 * 1. 
 *            
 */
-class DepositSlotTimedTestForSimpleRepeat_S9905648
+class Test_DepositSlotTimedTestForSimpleRepeat
 {
 	////////////////////////////////////////////////////////////////////////////////
 	

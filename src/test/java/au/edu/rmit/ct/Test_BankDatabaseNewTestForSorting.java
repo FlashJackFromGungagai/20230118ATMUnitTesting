@@ -43,7 +43,7 @@ import org.junit.jupiter.api.MethodOrderer;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class BankDatabaseNewTestForSorting_S9905648
+class Test_BankDatabaseNewTestForSorting
 {
 	////////////////////////////////////////////////////////////////////////////////
 	

@@ -4,9 +4,6 @@ package au.edu.rmit.ct;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 //import com.dietel.ATM;
@@ -18,7 +15,7 @@ import org.junit.jupiter.api.Test;
 * 
 * 
 * -------------------------------------------------------------------------
-*            THIS IS THE DepositSlotTimedTestAdvancedTimingS9905648.
+*            THIS IS THE Test_DepositSlotTimedTestAdvancedTiming.
 * 
 * what this class will do:
 * 1. 	Check that the Deposit Slot will not allow deposit to be received before 
@@ -87,7 +84,7 @@ import org.junit.jupiter.api.Test;
 * 
 *            
 */ 
-class DepositSlotTimedTestAdvancedTimingS9905648 
+class Test_DepositSlotTimedTestAdvancedTiming
 {
 	////////////////////////////////////////////////////////////////////////////////
 	

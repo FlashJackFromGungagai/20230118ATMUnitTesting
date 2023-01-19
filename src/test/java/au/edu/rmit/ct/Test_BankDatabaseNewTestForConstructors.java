@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
 
 
 //  this is an un-used import statement
-import au.edu.rmit.ct.*;
+
 
 ////////////////////////////////////////////////////////////////////////////////
 /*--------------------------------------------------------------------------
@@ -43,7 +43,7 @@ import au.edu.rmit.ct.*;
 *            
 */ 
 
-class BankDatabaseNewTestForConstructors_S9905648
+class Test_BankDatabaseNewTestForConstructors
 {
 	
 
