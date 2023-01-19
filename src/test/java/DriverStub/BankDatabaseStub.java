@@ -1,4 +1,5 @@
 package DriverStub;
+import AppUnderTest.*;
 //package main.java.com.dietel;
 // BankDatabase.java
 // Represents the bank account information database
@@ -24,7 +25,7 @@ package DriverStub;
 public class BankDatabaseStub
 {
 ////////////////////////////////////////////////////////////////////////////////
-   private AccountStub accounts[]; 
+   private Account accounts[]; 
    // array of Accounts
 
    
@@ -37,9 +38,9 @@ public class BankDatabaseStub
    // 
    public BankDatabaseStub()
    {
-      accounts = new AccountStub[ 3 ]; // just 2 accounts for testing
-      accounts[ 0 ] = new AccountStub( 12345, 54321, 1000.0, 1200.0 );
-      accounts[ 1 ] = new AccountStub( 98765, 56789, 200.0, 200.0 );
+      accounts = new Account[ 3 ]; // just 2 accounts for testing
+      accounts[ 0 ] = new Account( 12345, 54321, 1000.0, 1200.0 );
+      accounts[ 1 ] = new Account( 98765, 56789, 200.0, 200.0 );
    } // end no-argument BankDatabase constructor
 
    
@@ -57,10 +58,10 @@ public class BankDatabaseStub
 	 * retrieve Account object containing specified account number
 	 */
    // 
-   private AccountStub getAccount( int accountNumber )
+   private Account getAccount( int accountNumber )
    {
       // loop through accounts searching for matching account number
-      for ( AccountStub currentAccount : accounts )
+      for ( Account currentAccount : accounts )
       {
          // return current account if match found
          if ( currentAccount.getAccountNumber() == accountNumber )
@@ -84,7 +85,7 @@ public class BankDatabaseStub
    public boolean authenticateUser( int userAccountNumber, int userPIN )
    {
       // attempt to retrieve the account with the account number
-	   AccountStub userAccount = getAccount( userAccountNumber );
+	   Account userAccount = getAccount( userAccountNumber );
 
       // if account exists, return result of Account method validatePIN
       if ( userAccount != null )
