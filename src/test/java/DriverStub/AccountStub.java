@@ -1,4 +1,5 @@
 package DriverStub;
+import AppUnderTest.Account;
 // 
 // 
 
@@ -18,15 +19,15 @@ package DriverStub;
 
 
 
-public class AccountStub 
+public class AccountStub extends Account
 {
 ////////////////////////////////////////////////////////////////////////////////
 	
 	// DECLARE CLASS VARIABLES
-   private int accountNumber; // account number
-   private int pin; // PIN for authentication
-   private double availableBalance; // funds available for withdrawal
-   private double totalBalance; // funds available + pending deposits
+    protected int accountNumber; // account number
+    protected int pin; // PIN for authentication
+    protected double availableBalance; // funds available for withdrawal
+   protected double totalBalance; // funds available + pending deposits
 
 
  //=========================================================================	
@@ -36,15 +37,21 @@ public class AccountStub
    // 
    // 
    // 
-   public AccountStub( 	int theAccountNumber, 
-		   			int thePIN, 
-		   			double theAvailableBalance, 
-		   			double theTotalBalance )
+   public AccountStub
+                    (
+                        int theAccntNumber,
+		   			    int thePN,
+		   			    double theAvailBalance,
+		   			    double theTotlBalance
+                    )
    {
-      accountNumber = theAccountNumber;
-      pin = thePIN;
-      availableBalance = theAvailableBalance;
-      totalBalance = theTotalBalance;
+
+       super(theAccntNumber,thePN, theAvailBalance, theTotlBalance );
+        accountNumber = theAccntNumber;
+        pin = thePN;
+        availableBalance = theAvailBalance;
+        totalBalance = theTotlBalance;
+
    } // end Account constructor
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -61,7 +68,7 @@ public class AccountStub
    {
       if ( userPIN == pin )
       {
-    	  // set the session..ActiveSession
+    	  // set the session...ActiveSession
 
     	  //this activates the slot.
     	  

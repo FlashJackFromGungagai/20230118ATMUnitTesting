@@ -12,7 +12,7 @@ package DriverStub;
 * 
 * 
 * -------------------------------------------------------------------------
-*  THIS IS THE DepositSlotTimed extends AppUnderTest.DepositSlot implements Runnable
+*  THIS IS THE DepositSlotSimpTimedDriver extends AppUnderTest.DepositSlot implements Runnable
 * 
 * what this class will do:
 * 1. 
@@ -20,8 +20,9 @@ package DriverStub;
 */
 
 import AppUnderTest.DepositSlot;
+import Exceptions.IllegalWaitTimeException;
 
-public class DepositSlotTimedDev extends DepositSlot implements Runnable
+public class DepositSlotAdvTimedDriver extends DepositSlot implements Runnable
 {
 ////////////////////////////////////////////////////////////////////////////////
 	
@@ -45,7 +46,7 @@ public class DepositSlotTimedDev extends DepositSlot implements Runnable
 	
 	
 	// CLASS CONSTRUCTOR
-	DepositSlotTimedDev(String name) 
+	public DepositSlotAdvTimedDriver(String name)
 	{
 		threadName = name;
 		if(debug) System.out.println("Creating " + threadName);
@@ -57,7 +58,7 @@ public class DepositSlotTimedDev extends DepositSlot implements Runnable
 	
 	
 	// CLASS CONSTRUCTOR
-	DepositSlotTimedDev(String name, long customWaitTime) throws Exception 
+	DepositSlotAdvTimedDriver(String name, long customWaitTime) throws Exception
 	{
 		if(customWaitTime > 5000)
 			throw new IllegalWaitTimeException("Your custom wait time of "+ customWaitTime+ " is too high");
@@ -65,7 +66,7 @@ public class DepositSlotTimedDev extends DepositSlot implements Runnable
 		this.waitTime = customWaitTime;
 		if(debug)  System.out.println("Creating " + threadName);
 		
-	}// end DepositSlotTimed(String name, long customWaitTime) throws Exception 
+	}// end DepositSlotSimpTimedDriver(String name, long customWaitTime) throws Exception
 	
 	
 ////////////////////////////////////////////////////////////////////////////////
@@ -217,4 +218,4 @@ public class DepositSlotTimedDev extends DepositSlot implements Runnable
 		
 	}// end public void checkTimer() 
 	
-}// end public class DepositSlotTimed extends main.java.AppUnderTest.DepositSlot implements Runnable
+}// end public class DepositSlotSimpTimedDriver extends main.java.AppUnderTest.DepositSlot implements Runnable

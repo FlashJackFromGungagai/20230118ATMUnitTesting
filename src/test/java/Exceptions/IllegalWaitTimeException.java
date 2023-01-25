@@ -1,6 +1,6 @@
 
-package DriverStub;
-import com.dietel.*;
+package Exceptions;
+import AppUnderTest.*;
 // this is used to import the DepositSlot class that is in com.dietel.* and to extend it
 
 ////////////////////////////////////////////////////////////////////////////////

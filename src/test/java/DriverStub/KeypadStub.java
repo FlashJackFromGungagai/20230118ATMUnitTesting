@@ -1,5 +1,5 @@
 package DriverStub;
-//package main.java.com.dietel;
+import AppUnderTest.*;
 
 
 // Keypad.java

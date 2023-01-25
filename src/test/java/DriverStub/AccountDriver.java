@@ -10,7 +10,7 @@ import AppUnderTest.Account;
 * 
 * 
 * -------------------------------------------------------------------------
-*            THIS IS THE CustomerAccount extends Account class.
+*            THIS IS THE AccountDriver extends Account class.
 * 
 * What this class will do:
 * 1. This class extends the parent class, Account.
@@ -18,7 +18,7 @@ import AppUnderTest.Account;
 */ 
 
 
-public class CustomerAccount extends Account
+public class AccountDriver extends Account
 {
 ////////////////////////////////////////////////////////////////////////////////
 	
@@ -32,13 +32,13 @@ public class CustomerAccount extends Account
 ////////////////////////////////////////////////////////////////////////////////
 
 
-	public CustomerAccount(	int theAccountNumber,
-							int thePIN, 
-							double theAvailableBalance, 
-							double theTotalBalance,
-							String familyName, 
-							String givenName, 
-							int bsb) throws Exception 
+	public AccountDriver(int theAccountNumber,
+						 int thePIN,
+						 double theAvailableBalance,
+						 double theTotalBalance,
+						 String familyName,
+						 String givenName,
+						 int bsb) throws Exception
 	{
 	
 		super(theAccountNumber, thePIN, theAvailableBalance, theTotalBalance);
@@ -54,7 +54,7 @@ public class CustomerAccount extends Account
 		this.setFamilyName(familyName);
 		this.setGivenName(givenName);
 		this.BSB = bsb;
-	}// end public CustomerAccount constructor
+	}// end public AccountDriver constructor
 
 	
 	
@@ -122,4 +122,4 @@ public class CustomerAccount extends Account
 		this.GivenName = givenName;
 	}// end public void setGivenName(String givenName) 
 
-}// end public class CustomerAccount extends Account 
+}// end public class AccountDriver extends Account

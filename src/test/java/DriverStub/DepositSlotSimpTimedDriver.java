@@ -5,6 +5,7 @@
 
 package DriverStub;
 import AppUnderTest.DepositSlot;
+import Exceptions.IllegalWaitTimeException;
 // this is used to import the DepositSlot class that is in com.dietel.* and to extend it
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -14,15 +15,15 @@ import AppUnderTest.DepositSlot;
 * 
 * 
 * -------------------------------------------------------------------------
-*            THIS IS THE BankDatabaseNew class.
+*            THIS IS THE BankDatabaseDriver class.
 * 
 * what this class will do:
 * 1. 
 *            
 */ 
 
-//public class DepositSlotTimed extends AppUnderTest.DepositSlot implements Runnable
-public class DepositSlotTimed extends DepositSlot implements Runnable
+//public class DepositSlotSimpTimedDriver extends AppUnderTest.DepositSlot implements Runnable
+public class DepositSlotSimpTimedDriver extends DepositSlot implements Runnable
 {
 	////////////////////////////////////////////////////////////////////////////////
 	// DECLARE CLASS VARIABLES
@@ -51,7 +52,7 @@ public class DepositSlotTimed extends DepositSlot implements Runnable
 
 	// Class constructor taking the thread name
 	/*
-	public DepositSlotTimed(String name)
+	public DepositSlotSimpTimedDriver(String name)
 	{
 		threadName = name;
 		if(debug) System.out.println("Creating " + threadName);
@@ -60,7 +61,7 @@ public class DepositSlotTimed extends DepositSlot implements Runnable
 	 */
 
 	// CLASS CONSTRUCTOR
-	public DepositSlotTimed(String name, long customWaitTime)
+	public DepositSlotSimpTimedDriver(String name, long customWaitTime)
 	{
 		if(customWaitTime > 5000)
 			throw new IllegalWaitTimeException("Your custom wait time of "+ customWaitTime+ " is too high");
@@ -68,7 +69,7 @@ public class DepositSlotTimed extends DepositSlot implements Runnable
 		this.waitTime = customWaitTime;
 		if(debug)  System.out.println("Creating " + threadName);
 
-	}// end DepositSlotTimed(String name, long customWaitTime) throws Exception
+	}// end DepositSlotSimpTimedDriver(String name, long customWaitTime) throws Exception
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -214,4 +215,4 @@ public class DepositSlotTimed extends DepositSlot implements Runnable
 
 	}// end public void checkTimer()
 
-}// end public class DepositSlotTimed extends main.java.AppUnderTest.DepositSlot implements Runnable
+}// end public class DepositSlotSimpTimedDriver extends main.java.AppUnderTest.DepositSlot implements Runnable

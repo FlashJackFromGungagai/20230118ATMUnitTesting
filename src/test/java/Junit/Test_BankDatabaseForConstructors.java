@@ -12,8 +12,8 @@ import java.util.ArrayList;
 //import org.junit.jupiter.api.AfterEach;
 //import org.junit.jupiter.api.BeforeAll;
 //import org.junit.jupiter.api.BeforeEach;
-import DriverStub.BankDatabaseNew;
-import DriverStub.CustomerAccount;
+import DriverStub.AccountDriver;
+import DriverStub.BankDatabaseDriver;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -34,18 +34,18 @@ import org.junit.jupiter.api.Test;
 * what this class will do:
 * 1. This criterion is linked to a learning outcome1 - Test the Constructors
 * 2. Provide at least three differently purposed Junit test cases to test 
-*    a.	The public BankDatabaseNew() Constructor in the BankDatabaseNew class 
+*    a.	The public BankDatabaseDriver() Constructor in the BankDatabaseDriver class
 *    
-*    b. The BankDatabaseNew(ArrayList<CustomerAccount> seedCustomers) throws Exception 
-*         Constructors in the BankDatabaseNew class 
+*    b. The BankDatabaseDriver(ArrayList<AccountDriver> seedCustomers) throws Exception
+*         Constructors in the BankDatabaseDriver class
 *    		 
-*    b. the add(CustomerAccount ca) method in the BankDatabaseNew class
+*    b. the add(AccountDriver ca) method in the BankDatabaseDriver class
 *    
 * 
 *            
 */ 
 
-class Test_BankDatabaseNewTestForConstructors
+class Test_BankDatabaseForConstructors
 {
 	
 
@@ -65,8 +65,8 @@ class Test_BankDatabaseNewTestForConstructors
 	   
 	//=========================================================================	
 	/*  This method set up the test environment to execute tests 
-	 *   on the BankDatabaseNew class, basic constructor
-	 *    public BankDatabaseNew()   
+	 *   on the BankDatabaseDriver class, basic constructor
+	 *    public BankDatabaseDriver()
 	 *   
 	
 	@BeforeAll
@@ -77,11 +77,11 @@ class Test_BankDatabaseNewTestForConstructors
  */	
 
 ////////////////////////////////////////////////////////////////////////////////
-// Test the  BankDatabaseNew() default constructor
+// Test the  BankDatabaseDriver() default constructor
 	   
 	   
 	//=========================================================================	
-	/*  This method sets up the BankDatabaseNew() default constructor
+	/*  This method sets up the BankDatabaseDriver() default constructor
 	 *   
 	
 	@BeforeEach
@@ -89,9 +89,9 @@ class Test_BankDatabaseNewTestForConstructors
 
 	public void BankDatabaseNewDefaultConstructor_SetUp() throws Exception 
 	{
-		//List<CustomerAccount> customers = new ArrayList<>();
-		//customers = new ArrayList<CustomerAccount>(seedCustomers);
-		//BankDatabaseNew tc01 = new BankDatabaseNew();
+		//List<AccountDriver> customers = new ArrayList<>();
+		//customers = new ArrayList<AccountDriver>(seedCustomers);
+		//BankDatabaseDriver tc01 = new BankDatabaseDriver();
 		
 	}// end etUp() throws Exception 
 
@@ -101,30 +101,30 @@ class Test_BankDatabaseNewTestForConstructors
 	   
 	//=========================================================================	
 	/*  This method validates the methods operate correctly
-	 *   after BankDatabaseNew() default constructor default constructor operates
+	 *   after BankDatabaseDriver() default constructor default constructor operates
 	 *   
 	 *   The test case it is: verify that creating an instance of the default 
 	 *   constructor, Will create and be an instanceof 
-	 *   BankDatabaseNew” and that instance shall be empty.
+	 *   BankDatabaseDriver” and that instance shall be empty.
 	 *   
 	 *   
 	 */	
 	@Test
 	@Order(1)
 	@DisplayName("1. Verify that the default constructor operates correctly by creating an empty class instance of"
-			         + "the BankDatabaseNew class? If test passes, has")
+			         + "the BankDatabaseDriver class? If test passes, has")
 	public void BankDatabaseNewDefaultConstructor_test() throws Exception
 	{
 		//fail("Not yet implemented");
 	
-		BankDatabaseNew tc01 = new BankDatabaseNew();
-		//assertEquals("DriverStub.BankDatabaseNew",tc01.getClass() );
+		BankDatabaseDriver tc01 = new BankDatabaseDriver();
+		//assertEquals("DriverStub.BankDatabaseDriver",tc01.getClass() );
 		//assertEquals(true,tc01.isEmpty() );
 		boolean assertInstanceCreatedtest = false;
 		boolean assertInstanceIsEmptytest =false;
 		
 		
-		assertInstanceCreatedtest =  tc01 instanceof BankDatabaseNew;
+		assertInstanceCreatedtest =  tc01 instanceof BankDatabaseDriver;
 		assertInstanceIsEmptytest = tc01.isEmpty();
 		
 
@@ -143,7 +143,7 @@ class Test_BankDatabaseNewTestForConstructors
 	   
 	//=========================================================================	
 	/*  This method clears up after executing the test case
-	 *  the BankDatabaseNew() default constructor
+	 *  the BankDatabaseDriver() default constructor
 	 *   
 	 
 	@AfterEach
@@ -155,7 +155,7 @@ class Test_BankDatabaseNewTestForConstructors
 	*/	
 
 ////////////////////////////////////////////////////////////////////////////////
-//Test the BankDatabaseNew(ArrayList<CustomerAccount> seedCustomers) 
+//Test the BankDatabaseDriver(ArrayList<AccountDriver> seedCustomers)
 //  Constructor 
 
 
@@ -180,32 +180,32 @@ class Test_BankDatabaseNewTestForConstructors
 	//=========================================================================	
 	/*  This method.....
 	 * 		Test case: 	Verify that you can create an instance of the 
-	 *  				BankDatabaseNew(ArrayList<CustomerAccount> seedCustomers) 
+	 *  				BankDatabaseDriver(ArrayList<AccountDriver> seedCustomers)
 	 *  				constructor	and that it will have
-	 *  				1. It is an instanceof the BankDatabaseNew class
+	 *  				1. It is an instanceof the BankDatabaseDriver class
 	 *  				2. It has a size of 1
 	 *  						
 	 *   
 	*/
 	@Test
 	@Order(2)
-	@DisplayName("2. Verify you can create an instance of the BankDatabaseNew(ArrayList<CustomerAccount> seedCustomers) " )
+	@DisplayName("2. Verify you can create an instance of the BankDatabaseDriver(ArrayList<AccountDriver> seedCustomers) " )
 	void BankDatabaseNewDetailedConstructor_test() throws Exception 
 	{
 		
 		int instantiatedClassSize =1;
-		CustomerAccount sdCustomers = new CustomerAccount (12345, 4321, 1000.0, 1200.0, "little", "mike", 0634);
-		ArrayList<CustomerAccount> cstomers = new ArrayList<CustomerAccount>() ;
+		AccountDriver sdCustomers = new AccountDriver(12345, 4321, 1000.0, 1200.0, "little", "mike", 0634);
+		ArrayList<AccountDriver> cstomers = new ArrayList<AccountDriver>() ;
 		
-		//BankDatabaseNew(  sdCustomers) ;
+		//BankDatabaseDriver(  sdCustomers) ;
 		cstomers.add(sdCustomers);
-		BankDatabaseNew tc02 = new BankDatabaseNew(cstomers);
+		BankDatabaseDriver tc02 = new BankDatabaseDriver(cstomers);
 		
 		boolean assertInstanceCreatedtest = false;
 		boolean assertInstanceSizeIs1test = false;
 		
 		
-		assertInstanceCreatedtest =  tc02 instanceof BankDatabaseNew;
+		assertInstanceCreatedtest =  tc02 instanceof BankDatabaseDriver;
 		assertInstanceSizeIs1test = (tc02.size()==instantiatedClassSize);
 		assertTrue(assertInstanceCreatedtest ==  assertInstanceSizeIs1test  );
 		
@@ -236,7 +236,7 @@ class Test_BankDatabaseNewTestForConstructors
 	
 	
 ////////////////////////////////////////////////////////////////////////////////
-//Test the test Add method in the BankDatabaseNew class
+//Test the test Add method in the BankDatabaseDriver class
 
 
 
@@ -248,8 +248,8 @@ class Test_BankDatabaseNewTestForConstructors
 	@BeforeEach
 	void testAdd_setUp() throws Exception 
 	{
-		//CustomerAccount aCustomer = new CustomerAccount (12345, 54321, 1000.0, 1200.0, "little", "mike", 0634);
-		//CustomerAccount sdCustomers = new CustomerAccount (12334, 4322, 1010.0, 1230.0, "George", "Erin", 0634);
+		//AccountDriver aCustomer = new AccountDriver (12345, 54321, 1000.0, 1200.0, "little", "mike", 0634);
+		//AccountDriver sdCustomers = new AccountDriver (12334, 4322, 1010.0, 1230.0, "George", "Erin", 0634);
 	}// end etUp() throws Exception 
 
 	 */
@@ -265,20 +265,20 @@ class Test_BankDatabaseNewTestForConstructors
 	 	
 	@Test
 	@Order(3)
-	@DisplayName("3. Verify you can create an instance of the BankDatabaseNew(ArrayList<CustomerAccount> seedCustomers) " )
+	@DisplayName("3. Verify you can create an instance of the BankDatabaseDriver(ArrayList<AccountDriver> seedCustomers) " )
 	void testAdd_test() throws Exception 
 	{
-		//CustomerAccount aCustomer 	= new CustomerAccount (23451, 5432, 1010.0, 1300.0, "little", "mike", 0634);
-		CustomerAccount ca = new CustomerAccount (12345, 4321, 1000.0, 1200.0, "george", "erin", 0624);
+		//AccountDriver aCustomer 	= new AccountDriver (23451, 5432, 1010.0, 1300.0, "little", "mike", 0634);
+		AccountDriver ca = new AccountDriver(12345, 4321, 1000.0, 1200.0, "george", "erin", 0624);
 		
 		//int instantiatedClassSize =2;
-		CustomerAccount sdCustomers = new CustomerAccount (23451, 5432, 1010.0, 1300.0, "little", "mike", 0634);
+		AccountDriver sdCustomers = new AccountDriver(23451, 5432, 1010.0, 1300.0, "little", "mike", 0634);
 		
-		ArrayList<CustomerAccount> cstomers = new ArrayList<CustomerAccount>() ;
+		ArrayList<AccountDriver> cstomers = new ArrayList<AccountDriver>() ;
 		
-		//BankDatabaseNew(  sdCustomers) ;
+		//BankDatabaseDriver(  sdCustomers) ;
 		cstomers.add(sdCustomers);
-		BankDatabaseNew tc03 = new BankDatabaseNew(cstomers);
+		BankDatabaseDriver tc03 = new BankDatabaseDriver(cstomers);
 		
 		tc03.add(ca);
 		assertEquals(2,tc03.size() );

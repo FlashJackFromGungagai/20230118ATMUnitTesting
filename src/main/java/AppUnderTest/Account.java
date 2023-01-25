@@ -43,10 +43,13 @@ public class Account
    *    The account total balance for the account number
    */
 
-   public Account( 	int theAccountNumber, 
+   public Account
+           (
+                    int theAccountNumber,
 		   			int thePIN, 
 		   			double theAvailableBalance, 
-		   			double theTotalBalance )
+		   			double theTotalBalance
+           )
    {
       accountNumber = theAccountNumber;
       pin = thePIN;

@@ -14,7 +14,7 @@ import AppUnderTest.BankDatabase;
 * 
 * 
 * -------------------------------------------------------------------------
-*            THIS IS THE BankDatabaseNew class.
+*            THIS IS THE BankDatabaseDriver class.
 * 
 * What this class will do:
 * 	1. This extends the parent class BankDatabase [inheritance].
@@ -28,19 +28,19 @@ import AppUnderTest.BankDatabase;
 *            
 */ 
 
-public class BankDatabaseNew extends BankDatabase
+public class BankDatabaseDriver extends BankDatabase
 {
 ////////////////////////////////////////////////////////////////////////////////
 	
 	// DECLARE CLASS VARIABLES
-	private  List<CustomerAccount> customers = new ArrayList<>();
+	private  List<AccountDriver> customers = new ArrayList<>();
 	// "customers" is an array list.
 
 	////////////////////////////////////////////////////////////////////////////////
 	//Class constructors from here...
 	////////////////////////////////////////////////////////////////////////////////
 
-	public BankDatabaseNew() 
+	public BankDatabaseDriver()
 	// CLASS CONSTRUCTOR
 	{
 		// default, contains no implementation.
@@ -48,15 +48,15 @@ public class BankDatabaseNew extends BankDatabase
 	}// close class constructor.
 	
 	
-	public BankDatabaseNew(ArrayList<CustomerAccount> seedCustomers) throws Exception 
-	//	'seedCustomers' is of type arrayList<CustomerAccount>
+	public BankDatabaseDriver(ArrayList<AccountDriver> seedCustomers) throws Exception
+	//	'seedCustomers' is of type arrayList<AccountDriver>
 	//	 This is public as it is a class constructor that takes in the variable "seedCustomers"
 	//		This constructor instantiates the new database with a seed customer so it in not null.
 	{
 		if(seedCustomers.isEmpty())
 			throw new Exception ("Trying to seed database with empty source");
 		customers = new ArrayList<>(seedCustomers);
-		// this was previously customers = new ArrayList<CustomerAccount>(seedCustomers);
+		// this was previously customers = new ArrayList<AccountDriver>(seedCustomers);
 		// changed by Mike Little 2023-01-11--1654.
 	}// // close class constructor.
 	
@@ -84,9 +84,9 @@ public class BankDatabaseNew extends BankDatabase
 	/*  This method.....
 	 * 		Adds a customer account object to the bank Database
 	 */
-	public void add(CustomerAccount aCustomer) throws Exception
+	public void add(AccountDriver aCustomer) throws Exception
 	{
-		CustomerAccount ca = getAccount(aCustomer.getAccountNumber());
+		AccountDriver ca = getAccount(aCustomer.getAccountNumber());
 		if( ca == null) 
 		{
 			customers.add(aCustomer);			
@@ -96,7 +96,7 @@ public class BankDatabaseNew extends BankDatabase
 			throw new Exception ("Customer number already exists");
 		}
 
-	}// close oid add(CustomerAccount aCustomer) throws Exception 
+	}// close oid add(AccountDriver aCustomer) throws Exception
 	
 	
 	//=========================================================================	
@@ -128,7 +128,7 @@ public class BankDatabaseNew extends BankDatabase
 	public void sortByTotalBalance()
 	{
 		// Sort by Total balance, then by Family name.
-		Comparator<CustomerAccount> sortByNameComparator = Comparator.comparing(CustomerAccount::getTotalBalance);
+		Comparator<AccountDriver> sortByNameComparator = Comparator.comparing(AccountDriver::getTotalBalance);
 		customers.sort(sortByNameComparator);		
 	}// close void sortByTotalBalance() 
 	
@@ -140,8 +140,8 @@ public class BankDatabaseNew extends BankDatabase
 	public void sortByBSB()
 	{
 		// Sort by BSB and then Family Name
-		Comparator<CustomerAccount> sortByNameComparator = Comparator.comparing(CustomerAccount::getBSB)
-		      .thenComparing(CustomerAccount::getFamilyName);
+		Comparator<AccountDriver> sortByNameComparator = Comparator.comparing(AccountDriver::getBSB)
+		      .thenComparing(AccountDriver::getFamilyName);
 		customers.sort(sortByNameComparator);	
 		
 	}// close void sortByBSB() 
@@ -154,8 +154,8 @@ public class BankDatabaseNew extends BankDatabase
 	public void sortByName()
 	{
 		// next set the comparator
-		Comparator<CustomerAccount> sortByNameComparator = Comparator.comparing(CustomerAccount::getFamilyName)
-		      .thenComparing(CustomerAccount::getGivenName);
+		Comparator<AccountDriver> sortByNameComparator = Comparator.comparing(AccountDriver::getFamilyName)
+		      .thenComparing(AccountDriver::getGivenName);
 		customers.sort(sortByNameComparator);
 		
 	}// close void sortByName() 
@@ -177,7 +177,7 @@ public class BankDatabaseNew extends BankDatabase
 	public boolean authenticateUser(int userAccountNumber, int userPIN) 
 	{
 		// attempt to retrieve the account with the account number
-		CustomerAccount userAccount = getAccount(userAccountNumber);
+		AccountDriver userAccount = getAccount(userAccountNumber);
 
 		// if account exists, return result of Account method validatePIN
 		if (userAccount != null)
@@ -194,10 +194,10 @@ public class BankDatabaseNew extends BankDatabase
 	 * 		it is private, as it called by a public method in the class
 	 * 			and so it's scope should be restricted.
 	 */
-	private CustomerAccount getAccount(int accountNumber) 
+	private AccountDriver getAccount(int accountNumber)
 	{
 		// loop through accounts searching for matching account number
-		for (CustomerAccount currentAccount : customers) 
+		for (AccountDriver currentAccount : customers)
 		{
 			// return current account if match found
 			if (currentAccount.getAccountNumber() == accountNumber)
@@ -206,7 +206,7 @@ public class BankDatabaseNew extends BankDatabase
 
 		return null; // if no matching account was found, return null
 		
-	}// close private CustomerAccount getAccount(int accountNumber) 
+	}// close private AccountDriver getAccount(int accountNumber)
 	
 	
 	//=========================================================================	
@@ -215,9 +215,9 @@ public class BankDatabaseNew extends BankDatabase
 	 * 		it is used for this test...
 	 * 			assertEquals(300.0, BanksDbnew_Testing.export().get(0).getTotalBalance(),0.00  );
 	 */
- 	public List<CustomerAccount> export()
+ 	public List<AccountDriver> export()
  	{
 		return  new ArrayList<>( customers); // returns a copy only of customer data.
-	} // List<CustomerAccount> export() 
+	} // List<AccountDriver> export()
  
-}// close public class BankDatabaseNew extends BankDatabase
+}// close public class BankDatabaseDriver extends BankDatabase

@@ -1,5 +1,5 @@
 package DriverStub;
-//package main.java.com.dietel;
+import AppUnderTest.*;
 
 // Screen.java
 // Represents the screen of the ATM

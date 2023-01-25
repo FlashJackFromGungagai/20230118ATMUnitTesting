@@ -1,10 +1,9 @@
 package Junit;
-
 //import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
-import DriverStub.DepositSlotDev;
-import DriverStub.DepositSlotTimedDev;
+import DriverStub.DepositSlotDriver;
+		import DriverStub.DepositSlotAdvTimedDriver;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +16,7 @@ import org.junit.jupiter.api.Test;
 * 
 * 
 * -------------------------------------------------------------------------
-*            THIS IS THE Test_DepositSlotTimedTestAdvancedTiming.
+*            THIS IS THE Test_DepositSlotSimpTimedDriverTestAdvancedTiming.
 * 
 * what this class will do:
 * 1. 	Check that the Deposit Slot will not allow deposit to be received before 
@@ -68,7 +67,7 @@ import org.junit.jupiter.api.Test;
 * 		 in order to comply with the User Requirements.
 * 
 * 6. the development deposit classes are:
-* 		depositDev.java, DepositSlotDev.java, DepositSlotTimeDev.java classes.
+* 		depositDev.java, DepositSlotDriver.java, DepositSlotTimeDev.java classes.
 * 
 * 7. These deposit development classes rely on a number of stub classes that 
 * 		have been modified from their orginal com.dietal source classes.
@@ -86,14 +85,14 @@ import org.junit.jupiter.api.Test;
 * 
 *            
 */ 
-class Test_DepositSlotTimedTestAdvancedTiming
+class Test_DepositSlotSimpTimedDriverTestAdvancedTiming
 {
 	////////////////////////////////////////////////////////////////////////////////
 	
 	// DECLARE CLASS VARIABLES...
 	//private static ATMStub theATM ;
-	private static DepositSlotDev DepositSlot;
-	private static DepositSlotTimedDev DepositSlotTimed;
+	private static DepositSlotDriver DepositSlot;
+	private static DepositSlotAdvTimedDriver DepositSlotTimed;
 	private static  String sessionName ;
 	private boolean slotIsActivated;
 	private boolean depositFundsSuccess;
@@ -120,9 +119,9 @@ class Test_DepositSlotTimedTestAdvancedTiming
 		
 		// the expected result shall be you cannot deposit funds.
 		slotIsActivated =false;
-		DepositSlot = new DepositSlotDev();
+		DepositSlot = new DepositSlotDriver();
 		sessionName = "ActiveSession";
-		DepositSlotTimed = new DepositSlotTimedDev(sessionName);
+		DepositSlotTimed = new DepositSlotAdvTimedDriver(sessionName);
 		boolean testResult;
 		
 		
@@ -166,9 +165,9 @@ class Test_DepositSlotTimedTestAdvancedTiming
 		 * 
 		 */
 		slotIsActivated =true;
-		DepositSlot = new DepositSlotDev();
+		DepositSlot = new DepositSlotDriver();
 		sessionName = "ActiveSession";
-		DepositSlotTimed = new DepositSlotTimedDev(sessionName);
+		DepositSlotTimed = new DepositSlotAdvTimedDriver(sessionName);
 		boolean testResult;
 		
 		
@@ -215,9 +214,9 @@ class Test_DepositSlotTimedTestAdvancedTiming
 		 */
 		
 		slotIsActivated =true;
-		DepositSlot = new DepositSlotDev();
+		DepositSlot = new DepositSlotDriver();
 		sessionName = "ActiveSession";
-		DepositSlotTimed = new DepositSlotTimedDev(sessionName);
+		DepositSlotTimed = new DepositSlotAdvTimedDriver(sessionName);
 		boolean firstDepositResult;
 		// the result of the first deposit should be true, a sucessful deposit
 		

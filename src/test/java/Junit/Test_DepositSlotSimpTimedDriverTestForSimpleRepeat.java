@@ -2,7 +2,7 @@ package Junit;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import DriverStub.DepositSlotTimed;
+import DriverStub.DepositSlotSimpTimedDriver;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,12 +31,12 @@ import org.junit.jupiter.api.TestMethodOrder;
 * 1. 
 *            
 */
-class Test_DepositSlotTimedTestForSimpleRepeat
+class Test_DepositSlotSimpTimedDriverTestForSimpleRepeat
 {
 	////////////////////////////////////////////////////////////////////////////////
 	
 	// DECLARE CLASS VARIABLES...
-	private static DepositSlotTimed tc01_DepositSlotTimed;
+	private static DepositSlotSimpTimedDriver tc01_DepositSlotSimpTimedDriver;
 	private static String DespositSlotTestThread ="" ;
 	private static long customWtTime = 1200; // default wait time
    
@@ -59,11 +59,11 @@ class Test_DepositSlotTimedTestForSimpleRepeat
 	static void setUpBeforeClass() throws Exception 
 	{
 		
-		//BankDatabaseNew tc01 = new BankDatabaseNew();
-		//DepositSlotTimed(String name, long customWaitTime) throws Exception
+		//BankDatabaseDriver tc01 = new BankDatabaseDriver();
+		//DepositSlotSimpTimedDriver(String name, long customWaitTime) throws Exception
 		DespositSlotTestThread = "tmp";
 		customWtTime = 5000;
-		tc01_DepositSlotTimed = new DepositSlotTimed(DespositSlotTestThread , customWtTime) ;
+		tc01_DepositSlotSimpTimedDriver = new DepositSlotSimpTimedDriver(DespositSlotTestThread , customWtTime) ;
 		
 	}// end
 
@@ -96,7 +96,7 @@ class Test_DepositSlotTimedTestForSimpleRepeat
 	void testTC01() throws Exception 
 	{
 		//fail("Not yet implemented");
-		tc01_DepositSlotTimed.checkTimer();
+		tc01_DepositSlotSimpTimedDriver.checkTimer();
 		
 	} // end
 

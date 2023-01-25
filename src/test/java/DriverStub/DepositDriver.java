@@ -21,7 +21,7 @@ package DriverStub;
 */ 
 
 
-public class DepositDev extends TransactionStub
+public class DepositDriver extends TransactionStub
 {
 ////////////////////////////////////////////////////////////////////////////////
 	
@@ -30,7 +30,7 @@ public class DepositDev extends TransactionStub
    private double amount; // amount to deposit
    private KeypadStub keypad; // reference to keypad
    
-   private DepositSlotDev depositSlot; // reference to deposit slot
+   private DepositSlotDriver depositSlot; // reference to deposit slot
    // This was the old version
    // private DepositSlot depositSlot; // reference to deposit slot
    
@@ -39,11 +39,11 @@ public class DepositDev extends TransactionStub
    
    
    // THIS IS ADDED CAPABILITY TO THIS CLASS
-    //DepositSlotTimed 
+    //DepositSlotSimpTimedDriver
    private String sessionName = "ActiveSession";
-   //private  DepositSlotTimed 
+   //private  DepositSlotSimpTimedDriver
 	 
-   private DepositSlotTimedDev  DepositSlotTimed = new DepositSlotTimedDev(sessionName );
+   private DepositSlotAdvTimedDriver DepositSlotTimed = new DepositSlotAdvTimedDriver(sessionName );
 	  // this passes the name of the new Session.
    
   
@@ -60,11 +60,11 @@ public class DepositDev extends TransactionStub
    // 
    // 
    // 
-   public DepositDev( 	int userAccountNumber, 
-		   			ScreenStub atmScreen, 
-		   			BankDatabaseStub atmBankDatabase, 
-		   			KeypadStub atmKeypad, 
-		   			DepositSlotDev atmDepositSlot )
+   public DepositDriver(int userAccountNumber,
+                        ScreenStub atmScreen,
+                        BankDatabaseStub atmBankDatabase,
+                        KeypadStub atmKeypad,
+                        DepositSlotDriver atmDepositSlot )
    {
       // initialize superclass variables
       super( userAccountNumber, atmScreen, atmBankDatabase );

@@ -35,7 +35,7 @@ public class ATMStub
    
    //private DepositSlot depositSlot; // ATM's deposit slot
    // this was the previous link to the previous of DepositSlot
-   private DepositSlotDev depositSlot; // ATM's deposit slot
+   private DepositSlotDriver depositSlot; // ATM's deposit slot
    // This is pointing to the development version of DepositSlot
    
    private BankDatabaseStub bankDatabase; // account information database
@@ -71,7 +71,7 @@ public class ATMStub
       screen = new ScreenStub(); // create screen
       keypad = new KeypadStub(); // create keypad 
      // cashDispenser = new CashDispenser(); // create cash dispenser
-      depositSlot = new DepositSlotDev(); // create deposit slot
+      depositSlot = new DepositSlotDriver(); // create deposit slot
       bankDatabase = new BankDatabaseStub(); // create acct info database
    } // end no-argument ATM constructor
 
@@ -278,7 +278,7 @@ public class ATMStub
        */   
             
          case DEPOSIT: // create new Deposit transaction
-            temp = new DepositDev( 
+            temp = new DepositDriver(
             							currentAccountNumber, 
             							screen, 
             							bankDatabase, 

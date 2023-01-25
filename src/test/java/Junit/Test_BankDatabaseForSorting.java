@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 
-import DriverStub.BankDatabaseNew;
-import DriverStub.CustomerAccount;
+import DriverStub.AccountDriver;
+import DriverStub.BankDatabaseDriver;
 import org.junit.jupiter.api.AfterAll;
 //import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -24,8 +24,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.MethodOrderer;
 //import org.junit.jupiter.api.TestMethodOrder;
 
-//import au.edu.rmit.ct.*;
-//import com.dietel.*;
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -45,33 +44,33 @@ import org.junit.jupiter.api.MethodOrderer;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class Test_BankDatabaseNewTestForSorting
+class Test_BankDatabaseForSorting
 {
 	////////////////////////////////////////////////////////////////////////////////
 	
 	// DECLARE CLASS VARIABLES...
 	
 	// list of customer test accounts
-	private static CustomerAccount ca00;
+	private static AccountDriver ca00;
 	// this is used by the constructor to instantiate the customer account
-	private static  CustomerAccount ca01; 
-	private static  CustomerAccount ca02;
-	private static  CustomerAccount ca03;
-	private static  CustomerAccount ca04;
-	private static  CustomerAccount ca05;
-	private static  CustomerAccount ca06;
-	private static  CustomerAccount ca07;
-	private static  CustomerAccount ca08;
-	private static  CustomerAccount ca09; 
+	private static AccountDriver ca01;
+	private static AccountDriver ca02;
+	private static AccountDriver ca03;
+	private static AccountDriver ca04;
+	private static AccountDriver ca05;
+	private static AccountDriver ca06;
+	private static AccountDriver ca07;
+	private static AccountDriver ca08;
+	private static AccountDriver ca09;
 	
 	// this is the array list for the Customer Accounts
-	private static ArrayList<CustomerAccount> customers;
+	private static ArrayList<AccountDriver> customers;
 	
 	// this is the array list for the sorted Customer Accounts
-	private static ArrayList<CustomerAccount> customers_temp;
+	private static ArrayList<AccountDriver> customers_temp;
 	
 	// this is the bank database containing the array list of customer accounts
-	private static BankDatabaseNew BanksDbnew_Testing;
+	private static BankDatabaseDriver BanksDbnew_Testing;
 	
 	
    
@@ -96,25 +95,25 @@ class Test_BankDatabaseNewTestForSorting
 	{
 		// Declare the test variables
 		//Initial test data
-		ca00 = new CustomerAccount (03451, 1432, 0100.0, 0300.0, "little", 		"mike", 	634);
-		ca01 = new CustomerAccount (12345, 2321, 1000.0, 1200.0, "george", 		"erin", 	627);
-		ca02 = new CustomerAccount (22345, 3321, 2000.0, 2200.0, "considine", 	"janet", 	634);
-		ca03 = new CustomerAccount (32345, 4321, 3000.0, 3200.0, "ley", 		"andrew", 	624);
-		ca04 = new CustomerAccount (42345, 5321, 4000.0, 4200.0, "russel", 		"peter", 	636);
-		ca05 = new CustomerAccount (52345, 6321, 5000.0, 5200.0, "armstrong", 	"gerald", 	724);
-		ca06 = new CustomerAccount (62345, 7321, 6000.0, 6200.0, "mcbride", 	"margaret", 621);
-		ca07 = new CustomerAccount (72345, 8321, 7000.0, 7200.0, "francis", 	"kate", 	625);
-		ca08 = new CustomerAccount (82345, 9321, 8000.0, 8200.0, "prowse", 		"tim", 		632);
-		ca09 = new CustomerAccount (92345, 1021, 9000.0, 9200.0, "michaels", 	"thomas", 	646);
+		ca00 = new AccountDriver(03451, 1432, 0100.0, 0300.0, "little", 		"mike", 	634);
+		ca01 = new AccountDriver(12345, 2321, 1000.0, 1200.0, "george", 		"erin", 	627);
+		ca02 = new AccountDriver(22345, 3321, 2000.0, 2200.0, "considine", 	"janet", 	634);
+		ca03 = new AccountDriver(32345, 4321, 3000.0, 3200.0, "ley", 		"andrew", 	624);
+		ca04 = new AccountDriver(42345, 5321, 4000.0, 4200.0, "russel", 		"peter", 	636);
+		ca05 = new AccountDriver(52345, 6321, 5000.0, 5200.0, "armstrong", 	"gerald", 	724);
+		ca06 = new AccountDriver(62345, 7321, 6000.0, 6200.0, "mcbride", 	"margaret", 621);
+		ca07 = new AccountDriver(72345, 8321, 7000.0, 7200.0, "francis", 	"kate", 	625);
+		ca08 = new AccountDriver(82345, 9321, 8000.0, 8200.0, "prowse", 		"tim", 		632);
+		ca09 = new AccountDriver(92345, 1021, 9000.0, 9200.0, "michaels", 	"thomas", 	646);
 		
-		customers = new ArrayList<CustomerAccount>() ;
+		customers = new ArrayList<AccountDriver>() ;
 		
 		customers.add(ca00);
 		// this seeds the customer account with a customer account
 		// in order to instantiate the Bank New Database.
-		BanksDbnew_Testing = new BankDatabaseNew(customers);
+		BanksDbnew_Testing = new BankDatabaseDriver(customers);
 		
-		// This now adds the remaining customer accounts to the BankDatabaseNew(customers)
+		// This now adds the remaining customer accounts to the BankDatabaseDriver(customers)
 		BanksDbnew_Testing.add(ca01);
 		BanksDbnew_Testing.add(ca02);
 		BanksDbnew_Testing.add(ca03);
@@ -144,7 +143,7 @@ class Test_BankDatabaseNewTestForSorting
 
 		// implementation from here
 		BanksDbnew_Testing.sortByBSB();  
-		customers_temp = (ArrayList<CustomerAccount>) BanksDbnew_Testing.export();
+		customers_temp = (ArrayList<AccountDriver>) BanksDbnew_Testing.export();
 		//     assertEquals("A", result.get(0).name);
 		assertEquals(621, customers_temp.get(0).getBSB() );
 		assertEquals(624, customers_temp.get(1).getBSB() );
@@ -177,7 +176,7 @@ class Test_BankDatabaseNewTestForSorting
 
 		// implementation from here
 		BanksDbnew_Testing.sortByName();  
-		customers_temp = (ArrayList<CustomerAccount>) BanksDbnew_Testing.export();
+		customers_temp = (ArrayList<AccountDriver>) BanksDbnew_Testing.export();
 		//     assertEquals("A", result.get(0).name);
 		assertEquals("armstrong", 	customers_temp.get(0).getFamilyName() );
 		assertEquals("considine", 	customers_temp.get(1).getFamilyName() );
@@ -214,7 +213,7 @@ class Test_BankDatabaseNewTestForSorting
 		BanksDbnew_Testing.sortByTotalBalance();  
 		//BanksDbnew_Testing.export()
 		
-		//customers_temp = (ArrayList<CustomerAccount>) BanksDbnew_Testing.export();
+		//customers_temp = (ArrayList<AccountDriver>) BanksDbnew_Testing.export();
 		//     assertEquals("A", result.get(0).name);
 		assertEquals(300.0, 	BanksDbnew_Testing.export().get(0).getTotalBalance(),0.00  );
 		assertEquals(1200.0, 	BanksDbnew_Testing.export().get(1).getTotalBalance(),0.00  );

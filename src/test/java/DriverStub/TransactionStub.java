@@ -1,5 +1,5 @@
 package DriverStub;
-//package main.java.com.dietel;
+import AppUnderTest.*;
 // Transaction.java
 // Abstract superclass Transaction represents an ATM transaction
 

@@ -1,5 +1,4 @@
 package DriverStub;
-//package main.java.com.dietel;
 
 
 // DepositSlot.java
@@ -19,27 +18,27 @@ package DriverStub;
 *            
 */ 
 
-public class DepositSlotDev 
+public class DepositSlotDriver
 {
 	// There is no CONSTRUCTOR in the orignal class
 	//  Constructors will be added.
 	
 	   // THIS IS ADDED CAPABILITY TO THIS CLASS
-    //DepositSlotTimed 
+    //DepositSlotSimpTimedDriver
    private String sessionName ;
-   //private  DepositSlotTimed 
+   //private  DepositSlotSimpTimedDriver
 	 
-   private DepositSlotTimedDev  DepositSlotTimed ;
+   private DepositSlotAdvTimedDriver DepositSlotTimed ;
 	  // this passes the name of the new Session.
    
    //private boolean MoneyReceivedDeposited =false;
    private boolean MoneyReceivedProcessExecuted;
    
-   public DepositSlotDev() throws Exception
+   public DepositSlotDriver() throws Exception
    {
 	   sessionName = "ActiveSession";
 	   long WaitTime=4000;
-	   DepositSlotTimed = new DepositSlotTimedDev(sessionName,WaitTime  );
+	   DepositSlotTimed = new DepositSlotAdvTimedDriver(sessionName,WaitTime  );
 	   MoneyReceivedProcessExecuted = false;
    }
 	
